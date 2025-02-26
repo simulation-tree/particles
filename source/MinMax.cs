@@ -88,6 +88,9 @@ namespace Particles
             this.max = max;
         }
 
+        /// <summary>
+        /// Creates a min-max value with the given <paramref name="center"/> and size of 0.
+        /// </summary>
         public MinMax(T center)
         {
             ThrowIfSizeIsNotCompatible();
