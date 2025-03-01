@@ -1,5 +1,4 @@
-﻿using Collections.Generic;
-using Particles.Components;
+﻿using Particles.Components;
 using System;
 using Unmanaged;
 using Worlds;
@@ -11,7 +10,7 @@ namespace Particles
         public readonly ref IsParticleEmitter.Emission Emission => ref GetComponent<IsParticleEmitter>().emission;
         public readonly ref IsParticleEmitter.InitialParticleState InitialParticleState => ref GetComponent<IsParticleEmitter>().initialParticleState;
         public readonly USpan<Particle> AllParticles => GetArray<Particle>().AsSpan();
-        
+
         public readonly uint AliveParticles
         {
             get
@@ -52,7 +51,7 @@ namespace Particles
         {
             this.world = world;
             this.value = world.CreateEntity(IsParticleEmitter.Default);
-            Array<Particle> particles = CreateArray<Particle>(256);
+            Values<Particle> particles = CreateArray<Particle>(256);
             for (uint i = 0; i < particles.Length; i++)
             {
                 particles[i].free = true;
@@ -63,7 +62,7 @@ namespace Particles
         {
             this.world = world;
             this.value = world.CreateEntity(emitter);
-            Array<Particle> particles = CreateArray<Particle>(256);
+            Values<Particle> particles = CreateArray<Particle>(256);
             for (uint i = 0; i < particles.Length; i++)
             {
                 particles[i].free = true;
@@ -78,7 +77,7 @@ namespace Particles
 
         public readonly ref Particle GetAliveParticle(uint index)
         {
-            Array<Particle> particles = GetArray<Particle>();
+            Values<Particle> particles = GetArray<Particle>();
             uint count = 0;
             for (uint i = 0; i < particles.Length; i++)
             {
