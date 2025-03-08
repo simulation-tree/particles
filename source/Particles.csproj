@@ -7,8 +7,8 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Title>Particles</Title>
         <Authors>popcron</Authors>
-        <Company>game-simulations</Company>
-        <RepositoryUrl>https://github.com/game-simulations/particles</RepositoryUrl>
+        <Company>simulation-tree</Company>
+        <RepositoryUrl>https://github.com/simulation-tree/particles</RepositoryUrl>
         <PackageId/>
     </PropertyGroup>
 
