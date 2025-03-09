@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using Unmanaged;
 
 namespace Particles
 {
@@ -101,16 +100,16 @@ namespace Particles
 
         public readonly override string ToString()
         {
-            USpan<char> buffer = stackalloc char[128];
-            uint length = ToString(buffer);
-            return buffer.GetSpan(length).ToString();
+            Span<char> buffer = stackalloc char[128];
+            int length = ToString(buffer);
+            return buffer.Slice(0, length).ToString();
         }
 
-        public unsafe readonly uint ToString(USpan<char> destination)
+        public unsafe readonly int ToString(Span<char> destination)
         {
             fixed (T* pMin = &min, pMax = &max)
             {
-                uint length = 0;
+                int length = 0;
                 destination[length++] = 'M';
                 destination[length++] = 'i';
                 destination[length++] = 'n';
