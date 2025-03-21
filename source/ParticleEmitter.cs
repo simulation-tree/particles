@@ -8,13 +8,13 @@ namespace Particles
     {
         public readonly ref IsParticleEmitter.Emission Emission => ref GetComponent<IsParticleEmitter>().emission;
         public readonly ref IsParticleEmitter.InitialParticleState InitialParticleState => ref GetComponent<IsParticleEmitter>().initialParticleState;
-        public readonly Span<Particle> AllParticles => GetArray<Particle>().AsSpan();
+        public readonly Span<Particle> AllParticles => GetArray<Particle>();
 
         public readonly int AliveParticles
         {
             get
             {
-                Span<Particle> particles = GetArray<Particle>().AsSpan();
+                Span<Particle> particles = GetArray<Particle>();
                 int count = 0;
                 for (int i = 0; i < particles.Length; i++)
                 {
@@ -32,7 +32,7 @@ namespace Particles
         {
             get
             {
-                Span<Particle> particles = GetArray<Particle>().AsSpan();
+                Span<Particle> particles = GetArray<Particle>();
                 int count = 0;
                 for (int i = 0; i < particles.Length; i++)
                 {
