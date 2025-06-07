@@ -29,9 +29,9 @@
 
   <ItemGroup>
     <Content Include="bin/Debug/net9.0/Particles.dll" Pack="true" PackagePath="tools/debug/Particles.dll" Visible="false"/>
-    <Content Include="bin/Debug/net9.0/Particles.xml" Pack="true" PackagePath="tools/debug/Particles.xml" Visible="false"/>
+    <Content Include="bin/Debug/net9.0/Particles.xml" Pack="true" PackagePath="tools/debug/Particles.xml" Visible="false" Condition="Exists('bin/Debug/net9.0/Particles.xml')"/>
     <Content Include="bin/Release/net9.0/Particles.dll" Pack="true" PackagePath="tools/release/Particles.dll" Visible="false"/>
-    <Content Include="bin/Release/net9.0/Particles.xml" Pack="true" PackagePath="tools/release/Particles.xml" Visible="false"/>
+    <Content Include="bin/Release/net9.0/Particles.xml" Pack="true" PackagePath="tools/release/Particles.xml" Visible="false" Condition="Exists('bin/Release/net9.0/Particles.xml')"/>
     <Content Include="build/Particles.targets" Pack="true" PackagePath="build/Particles.targets" Visible="false"/>
   </ItemGroup>
 
