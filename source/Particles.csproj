@@ -11,6 +11,7 @@
     <RepositoryUrl>https://github.com/simulation-tree/particles</RepositoryUrl>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <OutDir>bin/$(TargetFramework)/$(Configuration)</OutDir>
+    <PackageId>SimulationTree.Particles</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
